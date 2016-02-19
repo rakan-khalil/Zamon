@@ -1,0 +1,41 @@
+// CSS-треугольники на основе свойства border {{
+
+.border-triangle(@_, @size, @color, ...) when (iscolor(@color)) {
+    border: round(@size / 2) solid @color;
+}
+
+.border-triangle(@_, @size, @color, ...) when not (iscolor(@color)) {
+    border: round(@size / 2) solid;
+}
+
+.border-triangle(left, ...) {
+    border-left-width: 0;
+}
+
+.border-triangle(right, ...) {
+    border-right-width: 0;
+}
+
+.border-triangle(top, ...) {
+    border-top-width: 0;
+}
+
+.border-triangle(bottom, ...) {
+    border-bottom-width: 0;
+}
+
+.border-triangle(@direction, @_, @_, @apex-size: 0) when (@direction = left), (@direction = right) {
+    width: 0;
+    height: @apex-size;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.border-triangle(@direction, @_, @_, @apex-size: 0) when (@direction = top), (@direction = bottom) {
+    width: @apex-size;
+    height: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+// )) CSS-треугольники на основе свойства border

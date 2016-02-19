@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zamon Group</title>
+    <meta charset="utf8">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+    <script src="scripts/jquery-2.1.3.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- стили и скрипты для слайдера-->
+    <link type="text/css" rel="stylesheet" href="slider/src/css/mightyslider.css">
+    <link type="text/css" rel="stylesheet" href="slider/src/css/mightyslider.animate.css">
+    <link type="text/css" rel="stylesheet" href="slider/main.css">
+  </head>
+</html>
+<body class="main">
+  <header>
+    <div class="header-wrapper">
+      <div class="logo"><img src="images/logo-zamon.png"></div>
+      <ul class="language">
+        <li><span>Ru</span></li>
+        <li><a href="#">En</a></li>
+      </ul>
+      <div class="regions">
+        <div class="item"><a href="#">Региональные представительства</a>
+          <div class="filials">
+            <li><span>United arab emirates</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+            <li><span>China</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+            <li><span>Uzbekistan</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+            <li><span>Kazakhstan</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+            <li><span>India</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+            <li><span>Pakistan</span><strong>998 90 900-80-70</strong><small>Город, Улица, Здание, Корпус 1, помещение 2</small></li>
+          </div>
+        </div>
+      </div>
+      <form>
+        <input type="text" placeholder="поиск по сайту">
+      </form>
+    </div>
+  </header>
+  <nav>
+    <!-- @TODO порядок sub-menu должен соответствовать порядку пунктов основго меню-->
+    <ul class="main-menu">
+      <li><a href="#">Группа компаний</a></li>
+      <li><a href="#">Услуги и решения</a></li>
+      <li><a href="#">Пресс-центр</a></li>
+      <li><a href="#">Партнерам</a></li>
+      <li><a href="#">Карьера</a></li>
+      <li><a href="#">Контактная информация</a></li>
+      <li class="feedback-link"><a href="#">Обратная связь</a></li>
+    </ul>
+    <ul class="sub-menu">
+      <li><a href="#">Общая информация</a></li>
+      <li><a href="#">Состав группы</a></li>
+      <li><a href="#">Миссия</a></li>
+      <li><a href="#">Ключевые преимущества</a></li>
+    </ul>
+    <ul class="sub-menu">
+      <li><a href="#">Услуги</a></li>
+      <li><a href="#">решения</a></li>
+      <li><a href="#">Услуги</a></li>
+      <li><a href="#">решения</a></li>
+    </ul>
+    <ul class="sub-menu">
+      <li><a href="#">Пресс-центр</a></li>
+      <li><a href="#">Пресс-центр</a></li>
+      <li><a href="#">Пресс-центр</a></li>
+    </ul>
+    <ul class="sub-menu">
+      <li><a href="#">Партнерам</a></li>
+      <li><a href="#">Партнерам</a></li>
+    </ul>
+    <ul class="sub-menu">
+      <li><a href="#">Карьера</a></li>
+      <li><a href="#">Карьера</a></li>
+    </ul>
+  </nav>
+  <!-- слайдер-->
+    <div id="kenburns" class="mightyslider_modern_skin">
+        <div class="frame"> <!-- FRAME -->
+            <div class="slide_element"> <!-- SLIDEELEMENT -->
+                <div class="slide mSKenburnsIn slow" data-mightyslider="cover: 'img/1.jpg', title: 'Lorem ipsum dolor sit amet', description: 'In laoreet tortor et pellentesque iaculis. Maecenas non pulvinar ligula. Duis sed pharetra ante, sed congue nisl. Praesent sed ligula.'"></div> <!-- SLIDE -->
+                <div class="slide mSKenburnsOut slow" data-mightyslider="cover: 'img/2.jpg', title: 'Video also supported', description: 'You can use videos as background and have the ken burns effect without any worries.'"></div> <!-- SLIDE -->
+                <div class="slide mSKenburnsIn" data-mightyslider="cover: 'img/3.jpg', title: 'Nullam in lorem commodo, tincidunt', description: 'Fusce et sem vel ligula tempor aliquet. Pellentesque purus velit, tempus vitae urna eu, dictum tristique odio. Praesent vel felis.'"></div> <!-- SLIDE -->
+                <div class="slide mSKenburnsOut" data-mightyslider="cover: 'img/4.jpg', title: 'In tristique, ipsum ac fermentum', description: 'Nam porttitor mollis vehicula. Quisque commodo ante sed diam malesuada viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec.'"></div> <!-- SLIDE -->
+                <div class="slide mSKenburnsIn" data-mightyslider="cover: 'img/5.jpg', title: 'Nam fermentum velit a viverra', description: 'Sed sed nibh sed nunc semper iaculis quis euismod felis. Morbi fringilla eget diam vel luctus. Nullam vitae elit arcu.'"></div> <!-- SLIDE -->
+            </div> <!-- /SLIDEELEMENT -->
+        </div> <!-- /FRAME -->
+
+        <div id="sliderContent">
+            <div id="sliderContentWrapper">
+                <div id="sliderContentItems"></div>
+            </div>
+
+            <ul id="sliderPages"></ul>
+        </div>
+
+        <a class="hover icon-expand icon-lg" id="fullscreen"></a>
+    </div> <!-- /PARENT -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="slider/assets/js/jquery.js"></script>
+    <script src="slider/assets/js/jquery.migrate.min.js"></script>
+    <script src="slider/assets/js/jquery.mobile.just-touch.js"></script>
+    <script src="slider/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="slider/assets/js/retina.js" type="text/javascript"></script>
+    <script src="slider/assets/js/jquery.easing-1.3.pack.js" type="text/javascript"></script>
+    <script src="slider/assets/js/jquery.stellar.js" type="text/javascript"></script>
+
+    <!-- Begin: JavaScript files needed for this template -->
+    <script src="slider/src/js/tweenlite.js" type="text/javascript"></script>
+    <script src="slider/src/js/mightyslider.js" type="text/javascript"></script>
+    <script src="slider/src/js/mightyslider.animate.plugin.min.js" type="text/javascript"></script>
+    <!-- End -->
+
+    <script src="slider/assets/js/custom.js" type="text/javascript"></script>
+
+    <!-- JavaScript code that run this template -->
+    <script>
+        jQuery(document).ready(function($) {
+            (function(){
+                var $kenburns = $('#kenburns'),
+                $frame = $('.frame', $kenburns),
+                $pagesbar = $('#sliderPages', $kenburns),
+                $titlesHolder = $('#sliderContentItems', $kenburns),
+                $titles = $('.sliderContentItem', $titlesHolder),
+                $fullscreen = $('#fullscreen', $kenburns);
+                $frame.mightySliderAnimate({
+                    pages: {
+                        pagesBar: $pagesbar,
+                        activateOn: 'click'
+                    },
+
+                    cycling: {
+                        cycleBy: 'slides',
+                        pauseTime: 8000
+                    },
+
+                    // Buttons
+                    buttons: {
+                        fullScreen: $fullscreen
+                    }
+                },
+                {
+                    load: function() {
+                        var html = "";
+                        $titlesHolder.empty();
+
+                        for(var i = 0, len = this.slides.length, slide; i < len; i++) {
+                            slide = this.slides[i];
+                            html += '<div class="sliderContentItem">'+
+                                        '<h2 class="sliderContentTitle">' + slide.options.title + '</h2>'+
+                                        '<div class="sliderContentDescription">'+
+                                            '<p>' + slide.options.description + '</p>'+
+                                        '</div>'+
+                                    '</div>';
+                        }
+
+                        $titlesHolder.html(html);
+                        $titles = $('.sliderContentItem', $titlesHolder);
+                        $titles.eq(0).addClass('selected');
+                    },
+                    active: function(name, index){
+                        $titles.removeClass('selected');
+                        $titles.eq(index).addClass('selected');
+                    },
+                    enterFullScreen: function() {
+                        $fullscreen.removeClass('icon-expand').addClass('icon-compress');
+                    },
+                    exitFullScreen: function() {
+                        $fullscreen.addClass('icon-expand').removeClass('icon-compress');
+                    }
+                });
+            })();
+        });
+    </script>
+
+  <footer>
+    <marquee scrollamount="10" class="fast-news">
+      <ul>
+        <li><a href="#">Стартап SwanLuv предлагает молодожёнам в США необычную услугу</a></li>
+        <li><a href="#">Успешно осуществлена поставка промышленного оборудования по проекту «Бизнес Сегодня»</a></li>
+        <li><a href="#">Когда льготы нашей бабушки-льготницы в очередной раз подрезали, я снова задумался об энергоэффективности квартиры.</a></li>
+      </ul>
+    </marquee>
+    <div class="footer-container">
+      <div class="copyright">Copyright © Zamon Group</div>
+      <ul class="nav">
+        <li><a href="#">Группа компаний</a></li>
+        <li><a href="#">Услуги и решения</a></li>
+        <li><a href="#">Пресс-центр</a></li>
+        <li><a href="#">Партнерам</a></li>
+        <li><a href="#">Карьера</a></li>
+        <li><a href="#">Контактная информация</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>

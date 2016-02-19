@@ -1,0 +1,24 @@
+nav
+    // @TODO порядок sub-menu должен соответствовать порядку пунктов основго меню
+    ul.main-menu
+        each val in [{text: 'Группа компаний'}, {text: 'Услуги и решения'}, {text: 'Пресс-центр'}, {text: 'Партнерам'}, {text: 'Карьера'}, {text: 'Контактная информация'}, {text: 'Обратная связь', class: 'feedback-link'}]
+            if (val.class)
+                li(class=val.class): a(href="#") #{val.text}
+            else
+                li: a(href="#") #{val.text}
+
+    ul.sub-menu
+        each val in ['Общая информация', 'Состав группы', 'Миссия', 'Ключевые преимущества']
+            li: a(href="#")= val
+    ul.sub-menu
+        each val in ['Услуги', 'решения', 'Услуги', 'решения']
+            li: a(href="#")= val
+    ul.sub-menu
+        each val in ['Пресс-центр', 'Пресс-центр', 'Пресс-центр']
+            li: a(href="#")= val
+    ul.sub-menu
+        each val in ['Партнерам', 'Партнерам']
+            li: a(href="#")= val
+    ul.sub-menu
+        each val in ['Карьера', 'Карьера']
+            li: a(href="#")= val

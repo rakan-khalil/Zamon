@@ -1,0 +1,42 @@
+// Визуальные эффекты CSS3 {{
+
+.border-radius(@value) {
+    //-moz-border-radius: @value;     // Firefox 1.0 - 3.x
+    //-webkit-border-radius: @value;  // Chrome 1 - 4, Safari 3.0 - 4.x
+    border-radius: @value;
+}
+
+.border-image(@value) {
+    //-moz-border-image: @value;      // Firefox 3.5 - 14
+    //-webkit-border-image: @value;   // Chrome 1 - 15, Safari 3.0 - 5.x
+    border-image: @value;
+    -o-border-image: @value;        // Opera 11.0 - 12.x
+}
+
+.border-image-simple(@image) {
+    .border-image(url(@image) 1 repeat);
+}
+
+.box-shadow(@value) {
+    //-moz-box-shadow: @value;        // Firefox 3.5 - 3.6
+    //-webkit-box-shadow: @value;     // Chrome 1 - 9, Safari 3.0 - 5.0
+    box-shadow: @value;
+}
+
+.transform(@value) {
+    -o-transform: @value;      // Opera 10.5 - 12.0
+    -ms-transform: @value;     // IE 9
+    //-moz-transform: @value;    // Firefox 3.5 - 15
+    -webkit-transform: @value; // Chrome 5+, Safari 3.1+, Opera 15+ (на момент версий 33, 7.0 и 18 всё ещё нужен)
+    transform: @value;
+}
+
+.transform-origin(@value) {
+    -o-transform-origin: @value;        // Opera 10.5 - 12.0
+    -ms-transform-origin: @value;       // IE 9
+    //-moz-transform-origin: @value;      // Firefox 3.5 - 15
+    -webkit-transform-origin: @value;   // Chrome 5+, Safari 3.1+, Opera 15+ (на момент версий 33, 7.0 и 18 всё ещё нужен)
+    transform-origin: @value;
+}
+
+// }} Визуальные эффекты CSS3

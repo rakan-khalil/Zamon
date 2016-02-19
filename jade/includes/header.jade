@@ -1,0 +1,21 @@
+header
+    .header-wrapper
+        .logo
+            img(src="images/logo-zamon.png")
+        ul.language
+            li
+                span Ru
+            li
+                a(href="#") En
+        .regions
+            .item
+                a(href="#") Региональные представительства
+
+                .filials
+                    each country in ['United arab emirates', 'China', 'Uzbekistan', 'Kazakhstan', 'India', 'Pakistan']
+                        li
+                            span= country
+                            strong 998 90 900-80-70
+                            small Город, Улица, Здание, Корпус 1, помещение 2
+        form
+            input(type="text", placeholder="поиск по сайту")

@@ -1,0 +1,19 @@
+- var style = 'main'
+include includes/head
+body
+    include includes/header
+    include includes/nav
+
+    - var pageName = 'Инспекция'
+
+    - var brlist = ['Zamon Group', 'Услуги и решения', pageName]
+    include includes/breadcrumbs
+
+    .container
+        h1 Услуги и решения
+        .two-cols
+            aside
+                include includes/aside_menu
+            article
+
+    include includes/footer

@@ -1,0 +1,142 @@
+// Работа с размером блоков, обрезанием/скрытием текста, выделением и т.п. {{
+
+.clearfix() {
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+    }
+}
+
+.break-word() {
+    word-wrap: break-word;
+    //word-break: break-all; // некрасиво рвёт любые слова  @TODO разобраться, как улучшить ситуацию
+}
+
+.box-sizing(@value) {
+    -moz-box-sizing: @value;    // Firefox 2.0+ (на момент версии 24 всё ещё нужен)
+    -webkit-box-sizing: @value; // Chrome 1 - 9, Safari 3.1 - 5.0
+    box-sizing: @value;
+}
+
+.background-clip(@value) when (@value = border-box), (@value = border) {
+    //-moz-background-clip: border;       // Firefox 1.0 - 3.6
+    //-webkit-background-clip: border;    // Chrome, Safari 3.0+, но работает и беспрефиксный вариант
+    background-clip: border-box;
+}
+.background-clip(@value) when (@value = padding-box), (@value = padding) {
+    //-moz-background-clip: padding;      // Firefox 1.0 - 3.6
+    //-webkit-background-clip: padding; // Chrome, Safari 3.0+, но работает и беспрефиксный вариант
+    background-clip: padding-box;
+}
+.background-clip(@value) when (@value = content-box), (@value = content) {
+    //-moz-background-clip: content;    // такой вариант не работал даже в Firefox 1.0 - 3.6
+    //-webkit-background-clip: content; // Chrome, Safari 3.1+, но работает и беспрефиксный вариант
+    background-clip: content-box;       // значение content-box НЕ поддерживается Opera ниже версии 12
+}
+
+.user-select-none() {
+    -moz-user-select: none;     // Firefox 1.5+ (на момент версии 24 всё ещё нужен)
+    -webkit-user-select: none;  // Chrome 1+, Safari 3.1+ (на момент версий 30 и 7.0 всё ещё нужен)
+    -ms-user-select: none;      // IE 10+ (на момент версии 11 всё ещё нужен)
+    user-select: none;          // не используется (и нет в спецификации)
+}
+
+.hide-text() {
+    overflow: hidden;
+    text-indent: -10000px;
+    text-align: left !important;
+}
+
+.text-overflow-ellipsis() {
+    overflow: hidden;
+    white-space: nowrap;
+    //-o-text-overflow: ellipsis; // Opera 9.0 - 10.6
+    text-overflow: ellipsis;
+}
+
+.text-overflow-none() {
+    white-space: normal;
+    //-o-text-overflow: clip; // Opera 9.0 - 10.6
+    text-overflow: clip;
+}
+
+.text-overflow-ellipsis-multiline(@numLines) {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: @numLines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    text-overflow: -o-ellipsis-lastline;    // Opera 10.6 - 12.x
+    //text-overflow: ellipsis-lastline;     // не используется (и нет в спецификации)
+}
+
+.text-overflow-none-multiline() {
+    .text-overflow-none();
+    display: block;
+    -webkit-line-clamp: none;
+    -webkit-box-orient: horizontal;
+}
+
+
+//**
+//* Упорядочивает по ширине все строки вложенных элементов, включая последнюю
+//* Вложенные элементы должны иметь display: inline или inline-block
+//* @use ::after
+//*/
+.justify-all() {
+    text-align: justify;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        height: 0;
+    }
+}
+
+//**
+//* Предотвращает сдвиг блока из-за верхнего маржина первого ребёнка
+//* @use ::before
+//*/
+.prevent-move-by-child() {
+
+    &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        margin-bottom: -1px;
+    }
+}
+
+
+// }} Работа с размером блоков, обрезанием/скрытием текста, выделением и т.п.
+
+
+// Расчёт позиции в спрайте {{
+
+// Расчёт background-position внутри спрайта (для квадратных иконок)
+//   @posX   - позиция по горизонтали (начиная с 1)
+//   @posY   - позиция по вертикали (начиная с 1)
+//   @sizeX  - горизонтальный размер "ячейки" спрайта
+//  [@sizeY] - вертикальный размер "ячейки" спрайта (если не передан, считается равным горизонтальному)
+.sprite-position(@posX, @posY, @sizeX, @sizeY: @sizeX) {
+    background-position: (@sizeX * -(@posX - 1)) (@sizeY * -(@posY - 1));
+}
+
+// Расчёт background-position внутри спрайта (для НЕквадратных иконок)
+// @DEPRECATED - следует использовать .sprite-position
+//   @posX  - позиция по горизонтали (начиная с 1)
+//   @posY  - позиция по вертикали (начиная с 1)
+//   @sizeX - горизонтальный размер "ячейки" спрайта
+//   @sizeY - вертикальный размер "ячейки" спрайта
+.sprite-position-nosquare(@posX, @posY, @sizeX, @sizeY) {
+    .sprite-position(@posX, @posY, @sizeX, @sizeY);
+}
+
+// }} Расчёт позиции в спрайте
