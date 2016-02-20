@@ -1,81 +1,59 @@
 "use strict";
 
 $(function() {
-    /** Работа с баннерами на главной [[ **/
-    /** @TODO допилить пересчет при ресайзе и возможность прокрута через клик **/
 
-    function setBannersHeight() {
-        var bannerHeight = $(window).height() - $('header').height() - $('nav').height(),
-            $banners = $('.banners'),
-            $bannersItem = $banners.children('li');
+    // слайдер плиточного элемента
+    // работает если все пункты одинаковой ширины
+    var tileSlider = $('.tiles.slider'),
+        tileSliderList = tileSlider.children('ul'),
+        tileSliderItem = tileSlider.find('li'),
+        tileSliderLastItemWidth = tileSliderItem.eq(tileSliderItem.length - 1).outerWidth(true),
+        tileSliderPrev = tileSlider.find('.prev'),
+        tileSliderNext = tileSlider.find('.next'),
+        tileSliderListWidth = 0,
+        tileSliderPosition = 0;
 
-        // Высота баннера равна высоте странице от которой отнимает высоту шапки и навигации
-        $banners.height(bannerHeight);
+    // считаем ширину всех пунктов
+    for(var index = 0; index < tileSliderItem.length; index++) {
+        tileSliderListWidth += tileSliderItem.eq(index).outerWidth(true);
     }
 
-    setBannersHeight();
+    tileSliderList.width(tileSliderListWidth);
 
-    // если изменили размер окна
-    $(window).resize(function() {
-        setBannersHeight();
+    // если нажали next
+    tileSliderNext.click( function() {
+        if(!$(this).hasClass('disabled')) {
+            tileSliderPosition -= tileSliderLastItemWidth;
+            tileSliderList.css({'left': tileSliderPosition});
+            setButsStatus();
+        }
     });
 
-    // переключаем слайды
-    /*setInterval( function() {
+    // если нажали prev
+    tileSliderPrev.click( function() {
+        if(!$(this).hasClass('disabled')) {
+            tileSliderPosition += tileSliderLastItemWidth;
+            tileSliderList.css({'left': tileSliderPosition});
+            setButsStatus();
+        }
+    });
 
-        var currentIndex = $('.banners li.visible').index() + 1;
-
-        if (currentIndex === $bannersItem.length) {
-            currentIndex = 0;
+    function setButsStatus() {
+        // проверяем возможность прокрутки влево
+        if (tileSliderPosition < 0) {
+            tileSliderPrev.removeClass('disabled');
+        } else {
+            tileSliderPrev.addClass('disabled');
         }
 
-        $bannersItem.removeClass('visible');
-        $bannersItem.eq(currentIndex).addClass('visible');
-    }, 2000);*/
-
-    /** ]] Работа с баннерами на главной **/
-
-
-    /** Работа со слайдером новостей на главной [[ **/
-    /** @TODO допилить возможность клика **/
-
-    runSlider()
-
-    function runSlider() {
-        var $slider = $('.small-slider'),
-            $sliderItem = $slider.children('li');
-
-        // переключаем слайды
-        setInterval( function() {
-
-            var currentIndex = $('.small-slider li.main').index() + 1;
-            var currentLi = 1;
-
-            if (currentIndex === $sliderItem.length) {
-                currentIndex = 0;
-            }
-
-            $sliderItem.removeClass('main');
-            $sliderItem.removeClass('left');
-            $sliderItem.removeClass('right');
-            $sliderItem.eq(currentIndex).addClass('main');
-
-            for (var index = 0; index < $sliderItem.length; index++) {
-
-
-                if (!$sliderItem.eq(index).hasClass('main')) {
-                    if (currentLi > 1) {
-                        $sliderItem.eq(index).addClass('right');
-                    } else {
-                        $sliderItem.eq(index).addClass('left');
-                    }
-
-                    currentLi++;
-                }
-            }
-        }, 2000);
+        // проверяем возможность прокрутки вправо
+        if (-tileSlider.width() < tileSliderPosition) {
+            tileSliderNext.removeClass('disabled');
+        } else {
+            tileSliderNext.addClass('disabled');
+        }
     }
-    /** ]] Работа со слайдером новостей на главной **/
+
 
 
     // появление подменю при наведение на пункты меню
