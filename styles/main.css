@@ -189,10 +189,16 @@ h1 {
   text-transform: uppercase;
   font-weight: 300;
 }
-h3 {
+h2 {
   font-size: 30px;
   line-height: 38px;
   color: #63c6ff;
+  font-weight: 300;
+}
+h3 {
+  font-size: 32px;
+  line-height: 32px;
+  color: #858585;
   font-weight: 300;
 }
 header {
@@ -550,112 +556,6 @@ nav ul.sub-menu a {
 nav ul.sub-menu a::after {
   display: none;
 }
-.banners {
-  overflow: hidden;
-}
-/*.small-slider {
-    @width: 800px;
-    @height: 160px;
-    @corner-width: 20px;
-    @mini-width: 200px;
-    @mini-height: 120px;
-
-    position: absolute;
-    width: @width;
-    height: @height;
-    left: 50%;
-    bottom: 20px;
-    .transform(translateX(-50%));
-    z-index: 10;
-
-
-    li {
-        .box-sizing(border-box);
-        position: relative;
-
-        &.main {
-            @img-width: 295px;
-
-            width: @width;
-            height: @height;
-            padding-left: @img-width;
-            background-color: #fff;
-
-            &::before {
-                position: absolute;
-                content: '';
-                width: @corner-width;
-                height: @height;
-                left: @img-width - @corner-width;
-                background: url(../images/small-slider-corner.png) 0 0 no-repeat;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                width: @img-width;
-                height: @height;
-                top: 0;
-                left: 0;
-            }
-
-            div {
-                padding-top: 18px;
-                padding-left: 15px;
-                padding-right: 45px;
-                font-size: 20px;
-                line-height: 30px;
-                font-weight: 300;
-
-                a {
-                    color: @common-text-gray;
-                    text-decoration: underline;
-                }
-            }
-
-            p {
-                position: absolute;
-                left: @img-width - 15px;
-                bottom: 0;
-                width: 450px;
-                padding: 10px 0 9px 35px;
-                font-size: 12px;
-                line-height: 15px;
-                color: #818181;
-                border-top: 1px solid #e5e5e5;
-                z-index: 1;
-            }
-        }
-
-        &.left,
-        &.right {
-            position: absolute;
-            width: @mini-width;
-            height: @mini-height;
-            top: 20px;
-
-            div, p {
-                display: none;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: @mini-width;
-                height: @mini-height;
-            }
-        }
-
-        &.left {
-            left: -@mini-width;
-        }
-
-        &.right {
-            right: -@mini-width;
-        }
-    }
-}*/
 footer {
   background-color: #424242;
   border-bottom: 3px solid #63c6ff;
@@ -796,11 +696,18 @@ footer .footer-container .nav li a {
   margin: 0 auto;
   width: 1200px;
 }
-.container h3 {
-  width: 1200px;
-  margin: 17px auto 0;
+.container h1 + * {
+  margin-top: 44px;
 }
-.container h3 + .tiles {
+.container h1 + h2 {
+  margin-top: 17px;
+}
+.container h2 {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container h2 + .tiles {
   margin-top: 25px;
 }
 .container .tiles {
@@ -892,7 +799,8 @@ footer .footer-container .nav li a {
 }
 .container .two-cols {
   width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container .two-cols:after {
   content: '';
@@ -904,6 +812,12 @@ footer .footer-container .nav li a {
 .container .two-cols aside {
   float: left;
   width: 260px;
+}
+.container .two-cols aside * + h3 {
+  margin-top: 34px;
+}
+.container .two-cols aside h3 + * {
+  margin-top: 24px;
 }
 .container .two-cols aside .aside-menu {
   position: relative;
@@ -1002,6 +916,101 @@ footer .footer-container .nav li a {
 }
 .container .two-cols aside .aside-menu li:last-child a::before {
   display: none;
+}
+.container .two-cols aside .aside-news > img {
+  display: block;
+  width: 260px;
+  height: auto;
+}
+.container .two-cols aside .aside-news ul {
+  background-color: #eef9ff;
+}
+.container .two-cols aside .aside-news ul li {
+  padding: 17px 10px;
+}
+.container .two-cols aside .aside-news ul li p {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #848484;
+}
+.container .two-cols aside .aside-news ul li p a {
+  color: inherit;
+  text-decoration: underline;
+}
+.container .two-cols aside .aside-news ul li span {
+  display: block;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #63c6ff;
+}
+.container .two-cols aside .aside-news ul li + li {
+  border-top: 1px solid #deecf4;
+}
+.container .two-cols aside .aside-news .more a {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 40px;
+  font-size: 13px;
+  line-height: 40px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  background-color: #63c6ff;
+  color: #fff;
+}
+.container .two-cols aside .aside-news .more a::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 9px;
+  margin-left: 9px;
+  background: url(../images/arrow.png) 0 0 no-repeat;
+}
+.container .two-cols article {
+  width: 900px;
+  float: right;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #797979;
+}
+.container .two-cols article h2 {
+  position: relative;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  padding-bottom: 23px;
+  width: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+.container .two-cols article h2::after {
+  content: '';
+  width: 408px;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-color: #63c6ff;
+}
+.container .two-cols article h3 {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
+}
+.container .two-cols article * + * {
+  margin-top: 25px;
+}
+.container .two-cols article ul li {
+  padding-left: 20px;
+  background: url(../images/bullet.png) 0 9px no-repeat;
+}
+.container .two-cols article .print {
+  display: inline-block;
+  line-height: 25px;
+  padding-left: 34px;
+  background: url(../images/print.png) 0 0 no-repeat;
 }
 .main header {
   position: absolute;
