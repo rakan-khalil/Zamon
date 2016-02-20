@@ -688,13 +688,25 @@ footer .footer-container .nav li a {
   display: inline-block;
   vertical-align: top;
 }
-.tiles ul li img {
-  display: block;
+.tiles ul li .img {
+  position: relative;
   width: 394px;
   height: 369px;
   top: 0;
   left: 0;
   z-index: -1;
+  overflow: hidden;
+}
+.tiles ul li .img img {
+  position: absolute;
+  width: 120%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-out;
+}
+.tiles ul li:hover .img img {
+  width: 100%;
 }
 .tiles ul li strong {
   position: absolute;

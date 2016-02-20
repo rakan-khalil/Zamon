@@ -47,7 +47,7 @@ body
             ul
                 each point in [{img: 'services-logistic.jpg', name: 'Логистика'}, {img: 'services-inspection.jpg', name: 'Инспекция'}, {img: 'services-quality-control.jpg', name: 'Контроль качества'}, {img: 'services-consulting.jpg', name: 'Консалтинг'}, {img: 'services-software-solutions.jpg', name: 'Программные решения'}, {img: 'services-special-offers.jpg', name: 'Специальные предложения'}]
                     li.tiles
-                        img(src="images/#{point.img}")
+                        .img: img(src="images/#{point.img}")
                         strong #{point.name}
                         span Название компании-подразделения
                         a(href="#") Перейти к разделу
