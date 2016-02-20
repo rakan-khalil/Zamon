@@ -911,6 +911,7 @@ footer .footer-container .nav li a {
   background-color: #414141;
   color: #b5b5b5;
   text-decoration: underline;
+  transition: all .5s ease;
 }
 .container .two-cols aside .aside-menu li a::before {
   position: absolute;
@@ -945,16 +946,20 @@ footer .footer-container .nav li a {
 .container .two-cols aside .aside-menu li .item > a::after {
   content: '';
 }
-.container .two-cols aside .aside-menu li .item:hover > .sub-menu {
-  display: block;
+.container .two-cols aside .aside-menu li .item:hover > .sub-menu > ul > li {
+  height: 40px;
 }
 .container .two-cols aside .aside-menu li .sub-menu {
-  display: none;
   position: absolute;
   width: 260px;
   left: 260px;
   top: 0;
   z-index: 10;
+}
+.container .two-cols aside .aside-menu li .sub-menu li {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
 }
 .container .two-cols aside .aside-menu li .sub-menu li a {
   background-color: #63c6ff;

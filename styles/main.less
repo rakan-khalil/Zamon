@@ -870,6 +870,7 @@ footer {
                         background-color: #414141;
                         color: #b5b5b5;
                         text-decoration: underline;
+                        transition: all .5s ease;
 
                         // разделительная полоска
                         &::before {
@@ -915,15 +916,14 @@ footer {
                             }
                         }
 
-                        &:hover > .sub-menu {
-                            display: block;
+                        &:hover > .sub-menu > ul > li {
+                            height: @item-height;
                         }
                     }
 
                     .sub-menu {
                         @submenu-bg: #44afec;
 
-                        display: none;
                         position: absolute;
                         width: @aside-width;
                         left: @aside-width;
@@ -931,6 +931,10 @@ footer {
                         z-index: 10;
 
                         li {
+                            height: 0;
+                            overflow: hidden;
+                            transition: all .2s ease-out;
+
                             a {
                                 background-color: @sea;
                                 color: #fff;
