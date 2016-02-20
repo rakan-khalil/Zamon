@@ -699,14 +699,14 @@ footer .footer-container .nav li a {
 }
 .tiles ul li .img img {
   position: absolute;
-  width: 120%;
+  width: 424px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
 }
 .tiles ul li:hover .img img {
-  width: 100%;
+  width: 120%;
 }
 .tiles ul li strong {
   position: absolute;
