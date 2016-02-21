@@ -232,8 +232,6 @@ header .language li {
 }
 header .language li span {
   display: inline-block;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 40px;
   height: 33px;
@@ -334,8 +332,6 @@ header .regions .filials li small {
   color: #d2dde4;
 }
 header form {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
   top: 37px;
@@ -349,9 +345,7 @@ header form {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#efefef+0,ffffff+20 */
   background: #efefef;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #efefef 0%, #ffffff 20%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #efefef 0%, #ffffff 20%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #efefef 0%, #ffffff 20%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -422,8 +416,6 @@ nav.hovered::before {
   content: '';
 }
 nav ul {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
   width: 1200px;
@@ -452,7 +444,7 @@ nav ul li a {
 }
 nav ul li:not(.feedback-link) a::after {
   position: absolute;
-  border: 6px solid #ffffff;
+  border: 6px solid #fff;
   border-top-width: 0;
   width: 0;
   height: 0;
@@ -460,7 +452,8 @@ nav ul li:not(.feedback-link) a::after {
   border-right-color: transparent;
   bottom: -19px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 nav ul li + li {
   margin-left: 39px;
@@ -541,8 +534,6 @@ nav ul.sub-menu {
   position: absolute;
   top: 50px;
   left: 50%;
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #fff;
@@ -702,7 +693,8 @@ footer .footer-container .nav li a {
   width: 394px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   transition: all 0.4s ease-out;
 }
 .tiles ul li:hover .img img {
@@ -765,8 +757,6 @@ footer .footer-container .nav li a {
   bottom: 40px;
   top: 184px;
   content: '';
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 50%);
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 50%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 50%);
 }
 .tiles ul li + li {
@@ -827,7 +817,8 @@ footer .footer-container .nav li a {
 }
 .tiles.slider .prev {
   left: 0;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .tiles.slider .next {
   right: 0;
@@ -856,8 +847,6 @@ footer .footer-container .nav li a {
   height: 400px;
   z-index: -1;
   background: #f3f3f3;
-  background: -moz-linear-gradient(top, #f3f3f3 0%, #ffffff 99%);
-  background: -webkit-linear-gradient(top, #f3f3f3 0%, #ffffff 99%);
   background: linear-gradient(to bottom, #f3f3f3 0%, #ffffff 99%);
 }
 .container h1 {
@@ -909,6 +898,32 @@ footer .footer-container .nav li a {
 .container .two-cols aside h3 + * {
   margin-top: 24px;
 }
+.container .two-cols aside .static-pages-menu li {
+  position: relative;
+  padding-left: 25px;
+  font-size: 15px;
+  line-height: 40px;
+}
+.container .two-cols aside .static-pages-menu li a {
+  color: #848484;
+  text-decoration: underline;
+}
+.container .two-cols aside .static-pages-menu li.active a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+}
+.container .two-cols aside .static-pages-menu li.active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: skewX(20deg);
+          transform: skewX(20deg);
+  background-color: #63c6ff;
+}
 .container .two-cols aside .aside-menu {
   position: relative;
 }
@@ -938,7 +953,8 @@ footer .footer-container .nav li a {
   position: absolute;
   width: 6px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 10px;
   height: 11px;
   background: url(../images/aside-menu-arrow.png) 0 -11px no-repeat;
@@ -1107,6 +1123,13 @@ footer .footer-container .nav li a {
   padding-left: 34px;
   background: url(../images/print.png) 0 0 no-repeat;
 }
+.container .two-cols.to-right aside {
+  float: right;
+}
+.container .two-cols.to-right article {
+  float: left;
+}
+.container + footer,
 .container + .slider-wrapper {
   margin-top: 50px;
 }

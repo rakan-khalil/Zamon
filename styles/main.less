@@ -866,6 +866,42 @@ footer {
                 margin-top: 24px;
             }
 
+            .static-pages-menu {
+                @line-height: 40px;
+
+                li {
+                    position: relative;
+                    padding-left: 25px;
+                    font-size: 15px;
+                    line-height: @line-height;
+
+                    a {
+                        color: #848484;
+                        text-decoration: underline;
+                    }
+
+                    &.active {
+
+                        a {
+                            position: relative;
+                            text-decoration: none;
+                            color: #fff;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            transform: skewX(20deg);
+                            background-color: @sea;
+                        }
+                    }
+                }
+            }
+
             .aside-menu {
                 @item-pad-x: 10px;
                 @item-height: 40px;
@@ -1140,8 +1176,19 @@ footer {
                 background: url(../images/print.png) 0 0 no-repeat;
             }
         }
+
+        &.to-right {
+            aside {
+                float: right;
+            }
+
+            article {
+                float: left;
+            }
+        }
     }
 
+    & + footer,
     & + .slider-wrapper {
         margin-top: 50px;
     }

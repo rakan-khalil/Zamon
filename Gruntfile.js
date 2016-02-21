@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 livereLoad: true
             },
             scripts: {
-                files: ['scripts/main.less'],
+                files: ['styles/main.less'],
                 tasks: ['less']
             }
         },

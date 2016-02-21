@@ -1,0 +1,12 @@
+h3 Новости
+.aside-news
+    img(src="photos/news-block-preview.jpg")
+
+    - var newsList = [{headline: 'Заголовок-ссылка последней публикации в разделе новостей из соответствующей рубрики', date: '10 марта, 2015 г.'}, {headline: 'Корни уходят в один фрагмент классической латыни 45 года, более двух тысячелетий', date: '9 марта, 2015 г.'}, {headline: 'Получил много версий. Некоторые версии появились по ошибке, некоторые, намеренно', date: '8 марта, 2015 г'}, ]
+
+    ul
+        each newsData in newsList
+            li
+                p: a(href="#")= newsData.headline
+                span= newsData.date
+    .more: a(href="#") Все новости
