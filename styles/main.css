@@ -172,35 +172,6 @@ input[type='button']::-moz-focus-inner {
 meta {
   display: none !important;
 }
-html,
-body {
-  height: 100%;
-}
-body {
-  width: 100%;
-  color: #424242;
-  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
-  background-color: #fff;
-}
-h1 {
-  font-size: 58px;
-  line-height: 58px;
-  color: #858585;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-h2 {
-  font-size: 30px;
-  line-height: 38px;
-  color: #63c6ff;
-  font-weight: 300;
-}
-h3 {
-  font-size: 32px;
-  line-height: 32px;
-  color: #858585;
-  font-weight: 300;
-}
 header {
   position: relative;
   width: 1200px;
@@ -382,7 +353,7 @@ header form button {
   right: 12px;
   width: 15px;
   height: 14px;
-  background: url(../images/search-button.png) 0 0 no-repeat;
+  background: url(../../images/search-button.png) 0 0 no-repeat;
   font-size: 0;
   line-height: 0;
   cursor: pointer;
@@ -491,7 +462,7 @@ nav ul li.feedback-link a::before {
   height: 11px;
   top: 0;
   left: -18px;
-  background: url(../images/feedback-icon.png) 0 0 no-repeat;
+  background: url(../../images/feedback-icon.png) 0 0 no-repeat;
 }
 nav ul li.feedback-link a::after {
   content: '';
@@ -512,7 +483,7 @@ nav ul li.feedback-link::after {
   height: 50px;
   top: 0;
   left: -21px;
-  background: url(../images/feedback-corner.png) 0 0 no-repeat;
+  background: url(../../images/feedback-corner.png) 0 0 no-repeat;
 }
 nav ul li.hover::after {
   position: absolute;
@@ -829,6 +800,53 @@ footer .footer-container .nav li a {
   bottom: 0;
   transition: all 0.5s ease;
 }
+.main header {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+.main header .header-wrapper {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+.main nav {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  width: 100%;
+  color: #424242;
+  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  background-color: #fff;
+}
+h1 {
+  font-size: 58px;
+  line-height: 58px;
+  color: #858585;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+h2 {
+  font-size: 30px;
+  line-height: 38px;
+  color: #63c6ff;
+  font-weight: 300;
+}
+h3 {
+  font-size: 32px;
+  line-height: 32px;
+  color: #858585;
+  font-weight: 300;
+}
 .slider-wrapper {
   border-top: 1px solid #ccc;
   padding-bottom: 50px;
@@ -1132,22 +1150,4 @@ footer .footer-container .nav li a {
 .container + footer,
 .container + .slider-wrapper {
   margin-top: 50px;
-}
-.main header {
-  position: absolute;
-  width: 100%;
-  background: #fff;
-  z-index: 10;
-}
-.main header .header-wrapper {
-  position: relative;
-  width: 1200px;
-  margin: 0 auto;
-}
-.main nav {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  right: 0;
-  z-index: 9;
 }

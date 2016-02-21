@@ -1,0 +1,22 @@
+.main {
+    header {
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        z-index: 10;
+
+        .header-wrapper {
+            position: relative;
+            width: @content-width;
+            margin: 0 auto;
+        }
+    }
+
+    nav {
+        position: absolute;
+        top: @header-height;
+        left: 0;
+        right: 0;
+        z-index: 9;
+    }
+}

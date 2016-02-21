@@ -1,0 +1,192 @@
+nav {
+    @feedback-bg: @common-text-gray;
+    @pad-top: 20px;
+    @line-height: 20px;
+
+    position: relative;
+    height: @nav-height;
+    background-color: @feedback-bg;
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: @nav-height;
+        left: 0;
+        right: 50%;
+        top: 0;
+        background-color: @sea;
+        z-index: 1;
+    }
+
+    // белый фон
+    &::before {
+        position: absolute;
+        height: @nav-height;
+        left: 0;
+        right: 0;
+        top: @nav-height;
+        background-color: #fff;
+        z-index: 1;
+        .box-shadow(0 0 3px rgba(0,0,0,0.3));
+    }
+
+    &.hovered::before {
+        content: '';
+    }
+
+    ul {
+        @triangle-size: 6px;
+
+        .box-sizing(border-box);
+        position: relative;
+        width: @content-width;
+        height: @nav-height;
+        margin: 0 auto 0;
+        padding-top: @pad-top;
+        background-color: @sea;
+        z-index: 2;
+
+        .clearfix();
+
+        li {
+            position: relative;
+            float: left;
+            font-size: 12px;
+
+            a {
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+
+
+            }
+
+            // стрелка вверх
+            &:not(.feedback-link) a::after {
+                position: absolute;
+                .border-triangle(top, @triangle-size * 2, #fff);
+                bottom: -(@nav-height - 11px - @pad-top);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            & + li {
+                @gap-left: 39px;
+                @divider-width: 1px;
+
+                margin-left: @gap-left;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: @divider-width;
+                    top: -5px;
+                    left: -(ceil(@gap-left - @divider-width) / 2);
+                    height: 20px;
+                    background-color: #88d4ff;
+                }
+            }
+
+            &.feedback-link {
+                @corner-width: 21px;
+
+                position: absolute;
+                height: @nav-height;
+                padding-left: 28px;
+                padding-right: 10px;
+                right: 0;
+                top: 0;
+                background-color: @feedback-bg;
+
+                a {
+                    @icon-width: 12px;
+
+                    position: relative;
+                    top: 19px;
+                    text-transform: none;
+                    font-weight: normal;
+                    font-size: 13px;
+                    color: #ececec;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: @icon-width;
+                        height: 11px;
+                        top: 0;
+                        left: -(@icon-width + 6px);
+                        background: url(../../images/feedback-icon.png) 0 0 no-repeat;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 1px;
+                        background-color: #7c7c7c;
+                    }
+                }
+
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: @corner-width;
+                    height: @nav-height;
+                    top: 0;
+                    left: -@corner-width;
+                    background: url(../../images/feedback-corner.png) 0 0 no-repeat;
+                }
+            }
+
+            &.hover {
+                // чтобы подменю не исчезало при попытке перейти с ссылки на подменю
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: @nav-height + 2;
+                    top: -@pad-top;
+                    left: 0;
+                }
+
+                a {
+                    position: relative;
+                    z-index: 1;
+
+                    &::after {
+                        content: '';
+                    }
+                }
+            }
+        }
+
+        &.sub-menu {
+            display: none;
+            position: absolute;
+            top: @nav-height;
+            left: 50%;
+            .transform(translateX(-50%));
+            background-color: #fff;
+
+            li {
+                &::before {
+                    background-color: #ececec;
+                }
+            }
+
+            a {
+                color: #848484;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

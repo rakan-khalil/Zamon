@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["styles"]
+                    paths: [""]
                 },
                 files: {
                     "styles/main.css": "styles/main.less"
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             },
             production: {
                 options: {
-                    paths: ["styles"],
+                    paths: [""],
                     plugins: [
                         new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]})
                     ],
