@@ -14,9 +14,19 @@
         li {
             position: relative;
             width: @item-width;
-            min-height: @img-height;
+            min-height: @img-height + @link-height;
             display: inline-block;
             vertical-align: top;
+
+            a {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: fade(#ccf, 50%);
+                z-index: 10;
+            }
 
             .img {
                 position: relative;
@@ -68,17 +78,18 @@
                 }
             }
 
-            span {
+            .name {
                 position: absolute;
                 font-size: 13px;
                 line-height: @span-height;
                 left: @pad-x;
+                right: @pad-x;
                 bottom: @link-height;
                 font-family: @font-arial;
                 color: #c9c9c9;
             }
 
-            a {
+            .link {
                 display: block;
                 height: @link-height;
                 padding: 0 @pad-x;

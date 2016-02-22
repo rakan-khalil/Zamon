@@ -520,6 +520,9 @@ nav ul.sub-menu li::before {
 nav ul.sub-menu a {
   color: #848484;
 }
+nav ul.sub-menu a:hover {
+  color: #63c6ff;
+}
 nav ul.sub-menu a::after {
   display: none;
 }
@@ -629,6 +632,9 @@ footer .footer-container .nav li a {
   color: #848484;
   text-decoration: underline;
 }
+.breadcrumbs ul li a:hover {
+  text-decoration: none;
+}
 .breadcrumbs ul li + li {
   margin-left: 24px;
 }
@@ -651,9 +657,18 @@ footer .footer-container .nav li a {
 .tiles ul li {
   position: relative;
   width: 394px;
-  min-height: 369px;
+  min-height: 409px;
   display: inline-block;
   vertical-align: top;
+}
+.tiles ul li a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(204, 204, 255, 0.5);
+  z-index: 10;
 }
 .tiles ul li .img {
   position: relative;
@@ -699,16 +714,17 @@ footer .footer-container .nav li a {
   left: 0;
   bottom: -1px;
 }
-.tiles ul li span {
+.tiles ul li .name {
   position: absolute;
   font-size: 13px;
   line-height: 47px;
   left: 15px;
+  right: 15px;
   bottom: 40px;
   font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
   color: #c9c9c9;
 }
-.tiles ul li a {
+.tiles ul li .link {
   display: block;
   height: 40px;
   padding: 0 15px;
@@ -718,7 +734,7 @@ footer .footer-container .nav li a {
   line-height: 40px;
   font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
 }
-.tiles ul li a::after {
+.tiles ul li .link::after {
   display: inline-block;
   content: '';
   width: 20px;
@@ -931,6 +947,12 @@ h3 {
   color: #848484;
   text-decoration: underline;
 }
+.container .two-cols aside .static-pages-menu li a:hover {
+  text-decoration: none;
+}
+.container .two-cols aside .static-pages-menu li.active {
+  margin-top: 4px;
+}
 .container .two-cols aside .static-pages-menu li.active a {
   position: relative;
   text-decoration: none;
@@ -1073,6 +1095,9 @@ h3 {
   color: inherit;
   text-decoration: underline;
 }
+.container .two-cols aside .aside-news ul li p a:hover {
+  text-decoration: none;
+}
 .container .two-cols aside .aside-news ul li span {
   display: block;
   font-size: 13px;
@@ -1145,6 +1170,12 @@ h3 {
   line-height: 25px;
   padding-left: 34px;
   background: url(../images/print.png) 0 0 no-repeat;
+}
+.container .two-cols article .print a {
+  text-decoration: underline;
+}
+.container .two-cols article .print a:hover {
+  text-decoration: none;
 }
 .container .two-cols.to-right aside {
   float: right;

@@ -175,7 +175,43 @@
                 });
             })();
         });
+
+        $( function() {
+            var titlesLength = $('.sliderContentTitle').length,
+                links = [
+                    'http://ivi.ru',
+                    'http://ya.ru',
+                    'http://mail.ru',
+                    'http://google.ru',
+                    'http://rambler.ru'
+                ]
+
+            for (var index = 0; index < titlesLength; index++) {
+                var text = $('.sliderContentTitle').eq(index).text();
+                $('.sliderContentTitle').eq(index).text('');
+                $('.sliderContentTitle').eq(index).prepend('<a href="' + links[index] + '">' + text);
+            }
+        });
     </script>
 
-  <!--include includes/footer-->
+  <footer>
+    <marquee scrollamount="10" class="fast-news">
+      <ul>
+        <li><a href="#">Стартап SwanLuv предлагает молодожёнам в США необычную услугу</a></li>
+        <li><a href="#">Успешно осуществлена поставка промышленного оборудования по проекту «Бизнес Сегодня»</a></li>
+        <li><a href="#">Когда льготы нашей бабушки-льготницы в очередной раз подрезали, я снова задумался об энергоэффективности квартиры.</a></li>
+      </ul>
+    </marquee>
+    <div class="footer-container">
+      <div class="copyright">Copyright © Zamon Group</div>
+      <ul class="nav">
+        <li><a href="#">Группа компаний</a></li>
+        <li><a href="#">Услуги и решения</a></li>
+        <li><a href="#">Пресс-центр</a></li>
+        <li><a href="#">Партнерам</a></li>
+        <li><a href="#">Карьера</a></li>
+        <li><a href="#">Контактная информация</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>

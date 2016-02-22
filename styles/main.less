@@ -138,9 +138,14 @@ h3 {
                     a {
                         color: #848484;
                         text-decoration: underline;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
                     }
 
                     &.active {
+                        margin-top: 4px;
 
                         a {
                             position: relative;
@@ -337,6 +342,10 @@ h3 {
                             a {
                                 color: inherit;
                                 text-decoration: underline;
+
+                                &:hover {
+                                    text-decoration: none;
+                                }
                             }
                         }
 
@@ -434,6 +443,14 @@ h3 {
                 line-height: @icon-height;
                 padding-left: @icon-width + 10px;
                 background: url(../images/print.png) 0 0 no-repeat;
+
+                a {
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
             }
         }
 
@@ -452,4 +469,8 @@ h3 {
     & + .slider-wrapper {
         margin-top: 50px;
     }
+}
+
+.sliderContentItem {
+    text-align: center;
 }

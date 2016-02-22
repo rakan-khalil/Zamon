@@ -98,4 +98,21 @@
                 });
             })();
         });
+
+        $( function() {
+            var titlesLength = $('.sliderContentTitle').length,
+                links = [
+                    'http://ivi.ru',
+                    'http://ya.ru',
+                    'http://mail.ru',
+                    'http://google.ru',
+                    'http://rambler.ru'
+                ]
+
+            for (var index = 0; index < titlesLength; index++) {
+                var text = $('.sliderContentTitle').eq(index).text();
+                $('.sliderContentTitle').eq(index).text('');
+                $('.sliderContentTitle').eq(index).prepend('<a href="' + links[index] + '">' + text);
+            }
+        });
     </script>
