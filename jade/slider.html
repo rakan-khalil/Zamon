@@ -109,10 +109,12 @@
                     'http://rambler.ru'
                 ]
 
-            for (var index = 0; index < titlesLength; index++) {
-                var text = $('.sliderContentTitle').eq(index).text();
-                $('.sliderContentTitle').eq(index).text('');
-                $('.sliderContentTitle').eq(index).prepend('<a href="' + links[index] + '">' + text);
-            }
+            setTimeout(function() {
+                for (var index = 0; index < titlesLength; index++) {
+                    var text = $('.sliderContentTitle').eq(index).text();
+                    $('.sliderContentTitle').eq(index).text('');
+                    $('.sliderContentTitle').eq(index).prepend('<a href="' + links[index] + '">' + text);
+                }
+            }, 1000);
         });
     </script>

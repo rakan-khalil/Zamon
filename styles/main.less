@@ -44,6 +44,19 @@ h3 {
     font-weight: 300;
 }
 
+.content-wrapper {
+    min-height: 100%;
+
+    // подложка для футера
+    &::after {
+        content: '';
+        display: block;
+
+        // 50px отступ снизу от контента до футераd
+        height: @footer-full-height + 50px;
+    }
+}
+
 .slider-wrapper {
     border-top: 1px solid #ccc;
     padding-bottom: 50px;
@@ -465,7 +478,6 @@ h3 {
         }
     }
 
-    & + footer,
     & + .slider-wrapper {
         margin-top: 50px;
     }
@@ -473,4 +485,35 @@ h3 {
 
 .sliderContentItem {
     text-align: center;
+
+    .sliderContentTitle {
+        font-family: @font-normal;
+        font-weight: 300;
+        letter-spacing: 7px;
+        text-transform: uppercase;
+
+        a:hover {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+                height: 1px;
+                background: fade(#fff, 30%);
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    .sliderContentDescription {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#sliderPages {
+    left: 50% !important;
+    transform: translateX(-50%);
 }

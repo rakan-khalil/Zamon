@@ -1,10 +1,13 @@
 footer {
+    position: relative;
+    margin-top: -@footer-full-height;
+    height: @footer-full-height - @footer-border-size;
     background-color: @footer-bg-color;
-    border-bottom: 3px solid @sea;
+    border-bottom: @footer-border-size solid @sea;
 
     .fast-news {
         overflow: hidden;
-        height: 39px;
+        height: @footer-fast-news-height;
         border-bottom: 1px solid #555;
 
         ul {
@@ -80,9 +83,9 @@ footer {
 
             li {
                 display: inline-block;
-                padding: 14px 14px;
+                padding: @footer-nav-item-pad;
                 font-size: 12px;
-                line-height: 20px;
+                line-height: @footer-nav-line-height;
                 color: #fff;
                 border-left: 1px solid #555;
 
