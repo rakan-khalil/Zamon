@@ -1134,7 +1134,7 @@ h3 {
   font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
 }
 .container .two-cols article * + * {
-  margin-top: 25px;
+  margin-top: 16px;
 }
 .container .two-cols article ul li {
   padding-left: 20px;
