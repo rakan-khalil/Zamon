@@ -1,15 +1,22 @@
 "use strict";
 
 $(function() {
-    var value = 0;
+    var docWidth = $(document).width() / 2;
+    var docHeight = $(document).height() / 2;
+    var itemSize = 100 / 20;
     var $block = $('.shape-wrapper');
 
 
+
     $(document).mousemove( function(e) {
+        console.log('X ' + e.pageY);
+        console.log('Y ' + e.pageX);
+
         $block.css({
-            "transform": "rotateX(" + e.pageY / 20 + "deg) rotateY(" + e.pageX / 20 + "deg)"
+            "transform": "rotateX(" + ((e.pageY - docHeight) / 10) + "deg) rotateY(" + ((e.pageX - docWidth) / 10 + itemSize) + "deg)"
         });
     });
+
 
     $('.piruet').click(function() {
         $block.addClass('clicked');

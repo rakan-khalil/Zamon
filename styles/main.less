@@ -19,8 +19,9 @@ body {
     box-sizing: border-box;
     width: 100%;
     font-family: Arial;
-    background: url(http://bgpatterns.ru/patterns/10/pattern.png) 0 0 repeat;
+    background: url(http://pattern4site.ru/images/fabric/_rebig/5-chernaya-tekstura-vorsistoy-tkani.png) 0 0 repeat;
     background-color: #fff;
+    cursor: move;
 }
 
 .piruet {
@@ -48,17 +49,20 @@ body {
 }
 
 .logo-wrapper {
-    perspective: 1001px;
+    height: 100%;
+    perspective: 1000px;
 }
 
 .shape-wrapper {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     left: 50%;
-    margin-left: -250px;
+    top: 50%;
+    margin-top: -(150px + @triangle-size);
+    margin-left: -(250px + @triangle-size);
     transform-style: preserve-3d;
-    transform-origin: 50% 50% @triangle-size;
+    transform-origin: 70% 50%;
 
     &.clicked {
         transition: all 2s ease;
@@ -119,29 +123,29 @@ body {
         }
 
         &.t1 {
-            transform: rotateY(-77deg) rotateX(90deg) rotateZ(-10deg);
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
         &.t2 {
             top: @triangle-size + (@triangle-size / 2);
-            transform: rotateY(-77deg) rotateX(90deg) rotateZ(-10deg);
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
         &.t3 {
             top: (@triangle-size * 2) + (@triangle-size / 4);
-            left: -(@triangle-size + @triangle-size / 3);
-            transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg) translateZ(-50px) translateX(@triangle-size / 3) translateZ(@triangle-size / 2);
+            left: -(@triangle-size + @triangle-size / 6);
+            transform: rotateY(-76deg) rotateX(-90deg) rotateZ(-14deg) translateZ(-50px) translateX(-10.667px) translateZ(50px);
         }
 
         &.t4 {
             top: (@triangle-size * 3);
-            transform: rotateY(-77deg) rotateX(90deg) rotateZ(-10deg);
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
         &.v1 {
             top: @triangle-size * 2;
             left: @triangle-size;
-            transform: rotateY(-77deg) rotateX(180deg) rotateZ(4deg);
+            transform: rotateY(-90deg) rotateX(180deg) rotateZ(0);
         }
 
         &.v2 {
@@ -150,41 +154,43 @@ body {
         }
 
         &.v3 {
+
             top: @triangle-size * 3 + (@triangle-size / 3);
             left: @triangle-size * 2 - (@triangle-size / 3);
-            transform: rotateY(-88deg) rotateX(180deg) rotateZ(0deg);
+            transform: rotateY(-90deg) rotateX(180deg) rotateZ(0deg);
         }
 
         &.v4 {
             top: @triangle-size * 2 + (@triangle-size / 3);
-            left: @triangle-size * 2 + (@triangle-size / 3);
+            left: @triangle-size * 2 + (@triangle-size / 4);
+            transform: rotateZ(0deg) translateY(@triangle-size / 5);
         }
 
         &.v5 {
             top: @triangle-size + (@triangle-size / 10);
-            left: @triangle-size * 3 + (@triangle-size / 5);
+            left: @triangle-size * 3 - (@triangle-size / 6);
         }
 
         &.v6 {
             top: @triangle-size * 3 + (@triangle-size / 3);
-            left: @triangle-size * 3 + (@triangle-size / 5);
-            transform: rotateY(-88deg) rotateX(180deg) rotateZ(0deg);
+            left: @triangle-size * 3 - (@triangle-size / 6);
+            transform: rotateY(-90deg) rotateX(180deg) rotateZ(0deg);
         }
 
         &.v7 {
             top: @triangle-size * 2;
-            left: @triangle-size * 4 - (@triangle-size / 7);
-            transform: rotateY(-90deg) rotateX(180deg) rotateZ(6deg);
+            left: @triangle-size * 3 + (@triangle-size / 2);
+            transform: rotateY(-90deg) rotateX(180deg) rotateZ(0);
         }
 
         &.i1 {
-            left: @triangle-size * 6;
+            left: @triangle-size * 6 - (@triangle-size / 10);
             transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
         &.i2 {
             top: @triangle-size + (@triangle-size / 2);
-            left: @triangle-size * 6;
+            left: @triangle-size * 6 - (@triangle-size / 10);
             transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
@@ -196,7 +202,7 @@ body {
 
         &.i4 {
             top: (@triangle-size * 3);
-            left: @triangle-size * 6;
+            left: @triangle-size * 6 - (@triangle-size / 10);
             transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
         }
 
@@ -207,7 +213,11 @@ body {
     &:hover {
         .shape-wrapper {
             .triangle {
-                opacity: .7;
+                opacity: .6;
+
+                &:hover {
+                    opacity: 1;
+                }
 
                 /*&.t1 {
                     transform: rotateY(283deg) rotateX(90deg) rotateZ(-10deg);
