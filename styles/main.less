@@ -2,36 +2,77 @@
 @import '__mixins';
 @import '__reset';
 
+@red: #ec174f;
+@red2: #d51749;
+@triangle-size: 100px;
+@x-cord: 30deg;
+@z-cord: -(@triangle-size / 100 * 36);
+
 html,
 body {
     height: 100%;
 }
 
 body {
+    padding-top: 100px;
+    padding-left: 100px;
+    box-sizing: border-box;
     width: 100%;
     font-family: Arial;
+    background: url(http://bgpatterns.ru/patterns/10/pattern.png) 0 0 repeat;
     background-color: #fff;
 }
 
+.piruet {
+    @icon-size: 75px;
+
+    position: absolute;
+    z-index: 100500;
+    width: @icon-size;
+    height: @icon-size;
+    top: 50px;
+    left: 50px;
+    background: url(../v5RL8MZmzhs.jpg) 0 0 no-repeat;
+    background-size: @icon-size auto;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+
+    &::before {
+        position: absolute;
+        content: 'кликабельно';
+        font-size: 13px;
+        color: #ccc;
+        top: -18px;
+    }
+}
+
 .logo-wrapper {
-    padding: 100px;
+    perspective: 1001px;
 }
 
 .shape-wrapper {
-    perspective: 1001px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    margin-left: -250px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% @triangle-size;
+
+    &.clicked {
+        transition: all 2s ease;
+    }
 
     .triangle {
-        @red: fade(#ec174f, 20%);
-        @triangle-size: 50px;
-        @x-cord: 30deg;
-        @z-cord: -18px;
-
         width: @triangle-size;
         height: @triangle-size;
         top: 0;
         left: 0;
         transform-style: preserve-3d;
         transform-origin: 50% 50% -(@triangle-size / 2);
+        transition: all .6s ease;
+        opacity: 0.5;
         position: absolute;
 
         .side {
@@ -42,7 +83,7 @@ body {
             transform-style: preserve-3d;
 
 
-            border: @triangle-size / 2 solid @red;
+            border: (@triangle-size / 2) solid @red;
             border-bottom-width: @triangle-size;
             border-left-color: transparent;
             border-top-color: transparent;
@@ -53,17 +94,16 @@ body {
             }
 
             &.side2 {
-                border-bottom-color: fade(black ,50%);
+                border-bottom-color: @red2;
                 transform: rotateY(90deg) rotateX(@x-cord) translateZ(@z-cord);
             }
 
             &.side3 {
-                border-bottom-color: fade(blue ,50%);
                 transform: rotateY(-90deg) rotateX(@x-cord) translateZ(@z-cord);
             }
 
             &.side4 {
-                border-bottom-color: fade(yellow ,50%);
+                border-bottom-color: @red2;
                 transform: rotateY(180deg) rotateX(@x-cord) translateZ(@z-cord);
             }
         }
@@ -83,14 +123,124 @@ body {
         }
 
         &.t2 {
-            margin-top: -40px;
-            transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg);
-            transform-origin: 37% 170% -@triangle-size;
+            top: @triangle-size + (@triangle-size / 2);
+            transform: rotateY(-77deg) rotateX(90deg) rotateZ(-10deg);
         }
 
         &.t3 {
-            margin-top: 75px;
+            top: (@triangle-size * 2) + (@triangle-size / 4);
+            left: -(@triangle-size + @triangle-size / 3);
+            transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg);
+        }
+
+        &.t4 {
+            top: (@triangle-size * 3);
             transform: rotateY(-77deg) rotateX(90deg) rotateZ(-10deg);
+        }
+
+        &.v1 {
+            top: @triangle-size * 2;
+            left: @triangle-size;
+            transform: rotateY(-77deg) rotateX(180deg) rotateZ(4deg);
+        }
+
+        &.v2 {
+            top: @triangle-size + (@triangle-size / 10);
+            left: @triangle-size * 2 - (@triangle-size / 3);
+        }
+
+        &.v3 {
+            top: @triangle-size * 3 + (@triangle-size / 3);
+            left: @triangle-size * 2 - (@triangle-size / 3);
+            transform: rotateY(-88deg) rotateX(180deg) rotateZ(0deg);
+        }
+
+        &.v4 {
+            top: @triangle-size * 2 + (@triangle-size / 3);
+            left: @triangle-size * 2 + (@triangle-size / 3);
+        }
+
+        &.v5 {
+            top: @triangle-size + (@triangle-size / 10);
+            left: @triangle-size * 3 + (@triangle-size / 5);
+        }
+
+        &.v6 {
+            top: @triangle-size * 3 + (@triangle-size / 3);
+            left: @triangle-size * 3 + (@triangle-size / 5);
+            transform: rotateY(-88deg) rotateX(180deg) rotateZ(0deg);
+        }
+
+        &.v7 {
+            top: @triangle-size * 2;
+            left: @triangle-size * 4 - (@triangle-size / 7);
+            transform: rotateY(-90deg) rotateX(180deg) rotateZ(6deg);
+        }
+
+        &.i1 {
+            left: @triangle-size * 6;
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
+        }
+
+        &.i2 {
+            top: @triangle-size + (@triangle-size / 2);
+            left: @triangle-size * 6;
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
+        }
+
+        &.i3 {
+            top: (@triangle-size * 2) + (@triangle-size / 4);
+            left: @triangle-size * 5 - (@triangle-size / 3);
+            transform: rotateY(-90deg) rotateX(-90deg) rotateZ(-10deg);
+        }
+
+        &.i4 {
+            top: (@triangle-size * 3);
+            left: @triangle-size * 6;
+            transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
+        }
+
+    }
+}
+
+body {
+    &:hover {
+        .shape-wrapper {
+            .triangle {
+                opacity: .7;
+
+                /*&.t1 {
+                    transform: rotateY(283deg) rotateX(90deg) rotateZ(-10deg);
+                }
+
+                &.t2 {
+                    transform: rotateY(-77deg) rotateX(-270deg) rotateZ(350deg);
+                }
+
+                &.t4 {
+                    transform: rotateY(283deg) rotateX(-270deg) rotateZ(-10deg);
+                }
+
+                &.t3 {
+                    transform: rotateY(-59deg) rotateX(270deg) rotateZ(350deg)
+                }
+
+                &.i1 {
+                    transform: rotateY(-100deg) rotateX(-270deg) rotateZ(-10deg);
+                }
+
+                &.i2 {
+                    transform: rotateY(260deg) rotateX(-270deg) rotateZ(-10deg);
+                }
+
+                &.i3 {
+                    transform: rotateY(-90deg) rotateX(-90deg) rotateZ(-10deg);
+                }
+
+                &.i4 {
+                    transform: rotateY(-100deg) rotateX(90deg) rotateZ(-10deg);
+                }*/
+            }
         }
     }
 }
