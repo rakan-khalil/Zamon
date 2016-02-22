@@ -1,10 +1,20 @@
-- var style = 'main'
+mixin pyramid()
+    .side.side1
+    .side.side2
+    .side.side3
+    .side.side4
+    .square
+
 include includes/head
-body.main
-    include includes/header
-    include includes/nav
+body
+    .logo-wrapper
+        .shape-wrapper
+            .triangle.t1
+                +pyramid()
 
-    // слайдер
-    include slider.html
+            .triangle.t2
+                +pyramid()
 
-    //include includes/footer
+            .triangle.t3
+                +pyramid()
+
