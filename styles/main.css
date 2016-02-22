@@ -15,7 +15,7 @@
 }
 @font-face {
   font-family: 'Gotham Pro';
-  font-weight: medium;
+  font-weight: 500;
   src: url(../fonts/Gotham_Pro_Medium.woff) format('woff'), url(../fonts/Gotham_Pro_Medium.ttf) format('truetype');
 }
 html,
@@ -414,7 +414,7 @@ nav ul li {
   font-size: 12px;
 }
 nav ul li a {
-  font-weight: medium;
+  font-weight: 500;
   color: #fff;
   text-transform: uppercase;
 }
