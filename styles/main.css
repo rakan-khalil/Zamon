@@ -277,8 +277,8 @@ body {
 .shape-wrapper .triangle.t3 {
   top: 225px;
   left: -133.33333333px;
-  -webkit-transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg);
-          transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg);
+  -webkit-transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg) translateZ(-50px) translateX(33.33333333px) translateZ(50px);
+          transform: rotateY(-59deg) rotateX(-90deg) rotateZ(-10deg) translateZ(-50px) translateX(33.33333333px) translateZ(50px);
 }
 .shape-wrapper .triangle.t4 {
   top: 300px;
@@ -335,8 +335,8 @@ body {
 .shape-wrapper .triangle.i3 {
   top: 225px;
   left: 466.66666667px;
-  -webkit-transform: rotateY(-90deg) rotateX(-90deg) rotateZ(-10deg);
-          transform: rotateY(-90deg) rotateX(-90deg) rotateZ(-10deg);
+  -webkit-transform: rotateY(-90deg) rotateX(-90deg) rotateZ(0);
+          transform: rotateY(-90deg) rotateX(-90deg) rotateZ(0);
 }
 .shape-wrapper .triangle.i4 {
   top: 300px;
