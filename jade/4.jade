@@ -1,0 +1,47 @@
+include includes/head
+body
+    .content-wrapper
+        .head-wrapper
+            include includes/header
+            include includes/nav
+
+        - var pageName = 'Все новости'
+
+        - var brlist = ['Zamon Group', 'Услуги и решения', pageName]
+        include includes/breadcrumbs
+
+        .container.full-width
+            h1 Пресс-центр
+            - var hor_items = ['Все новости', 'Новости группы', 'Логистика', 'Инспекция', 'Контроль качества', 'Консалтинг', 'Программные решения', 'Специальные предложения']
+
+            .hor-page-nav
+                ul
+                    each item in hor_items
+                        if item === pageName
+                            li.active
+                                a(href="#")= item
+                        else
+                            li
+                                a(href="#")= item
+
+            .slider-wrapper-full
+                .slider-full
+                    .head
+                        h2 Главное
+                            span.prev
+                            span.next
+                    ul
+                        each point in [{img: 'services-logistic.jpg', name: 'Логистика', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-inspection.jpg', name: 'Инспекция', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}, {img: 'services-quality-control.jpg', name: 'Контроль качества', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-consulting.jpg', name: 'Консалтинг', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}, {img: 'services-software-solutions.jpg', name: 'Программные решения', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-special-offers.jpg', name: 'Специальные предложения', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}, {img: 'services-logistic.jpg', name: 'Логистика', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-inspection.jpg', name: 'Инспекция', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}, {img: 'services-quality-control.jpg', name: 'Контроль качества', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-consulting.jpg', name: 'Консалтинг', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}, {img: 'services-software-solutions.jpg', name: 'Программные решения', text: 'Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»'}, {img: 'services-special-offers.jpg', name: 'Специальные предложения', text: 'Завершена инспекционнаяпроверка нашими специалистами по поставкам в РУз «CargoTargo»'}]
+                            li
+                                a(href="#")
+                                    .img: img(src="images/#{point.img}")
+                                    strong #{point.name}
+                                    span.text #{point.text}
+                                    time 15
+                                        small 05, 2015
+            h2 Раннее
+
+
+
+
+    include includes/footer

@@ -92,4 +92,67 @@ $(function() {
         }
     );
 
+
+
+    // слайдер на всю страницу
+    // работает если все пункты одинаковой ширины
+    var fullSlider = $('.slider-full'),
+        fullSliderList = fullSlider.children('ul'),
+        fullSliderItem = fullSlider.find('li'),
+        fullSliderLastItemWidth = fullSliderItem.eq(fullSliderItem.length - 1).outerWidth(true),
+        fullSliderPrev = fullSlider.find('.prev'),
+        fullSliderNext = fullSlider.find('.next'),
+        fullSliderListWidth = 0,
+        fullSliderPosition = 0;
+
+    // считаем ширину всех пунктов
+    for(var index = 0; index < fullSliderItem.length; index++) {
+        fullSliderListWidth += fullSliderItem.eq(index).outerWidth(true);
+    }
+
+    fullSliderList.width(fullSliderListWidth);
+
+    // центрируем
+    fullSliderPosition = -((fullSliderListWidth - fullSlider.width()) / 2);
+
+    fullSliderList.css({
+        left: fullSliderPosition
+    });
+
+    // если нажали next
+    fullSliderNext.click( function() {
+        if(!$(this).hasClass('disabled')) {
+            fullSliderPosition -= fullSliderLastItemWidth;
+            fullSliderList.css({'left': fullSliderPosition});
+            setButsStatus2();
+        }
+    });
+
+    // если нажали prev
+    fullSliderPrev.click( function() {
+        if(!$(this).hasClass('disabled')) {
+            fullSliderPosition += fullSliderLastItemWidth;
+            fullSliderList.css({'left': fullSliderPosition});
+            setButsStatus2();
+        }
+    });
+
+    function setButsStatus2() {
+        console.log(fullSliderPosition);
+
+        // проверяем возможность прокрутки влево
+        if (fullSliderPosition >= 0) {
+            fullSliderPrev.addClass('disabled');
+        } else {
+            fullSliderPrev.removeClass('disabled');
+        }
+
+        // проверяем возможность прокрутки вправо
+        if (-(fullSliderList.width() - fullSlider.width()) < fullSliderPosition) {
+            fullSliderNext.removeClass('disabled');
+        } else {
+            fullSliderNext.addClass('disabled');
+        }
+    }
+
 });;
