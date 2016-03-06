@@ -39,7 +39,33 @@ body
                                     span.text #{point.text}
                                     time 15
                                         small 05, 2015
-            h2 Раннее
+            - var news = ['services-logistic.jpg', 'services-inspection.jpg', 'services-quality-control.jpg', 'services-special-offers.jpg','services-logistic.jpg', 'services-inspection.jpg', 'services-quality-control.jpg', 'services-special-offers.jpg']
+
+            .news
+                h2 Раннее
+
+                ul.news-list
+                    each item in news
+                        li
+                            img(src="images/#{item}")
+                            a(href="#") Короткий заголовок публикации, отражающий тему статьи
+                            p Небольшое превью публикации, состоящее из двух-трех предложений, в краткце расскаывающей о публикации.
+                            time 13 марта, 2015
+
+                ul.pager
+                    li.active 1
+
+                    li
+                        a(href="#") 2
+                    li
+                        a(href="#") 3
+                    li
+                        a(href="#") 4
+                    li
+                        a(href="#") 5
+                    li
+                        a(href="#") ...
+
 
 
 

@@ -1,0 +1,28 @@
+.pager {
+    li {
+        @active-size: 50px;
+
+        display: inline-block;
+        vertical-align: top;
+        line-height: @active-size;
+        font-size: 20px;
+        font-weight: 300;
+
+        a {
+            color: #848484;
+            text-decoration: underline;
+        }
+
+        & + li {
+            margin-left: 17px;
+        }
+
+        &.active {
+            width: @active-size;
+            text-align: center;
+            background-color: @sea;
+            color: #fff;
+            border-radius: 50%;
+        }
+    }
+}

@@ -840,7 +840,7 @@ footer .footer-container .nav li a {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  line-height: 50px;
+  line-height: 50px !important;
   margin-right: 24px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -979,6 +979,77 @@ footer .footer-container .nav li a {
   line-height: 18px;
   background-color: #424242;
   color: #cacaca;
+}
+.slider-wrapper-full + .news {
+  margin-top: 38px;
+}
+.news {
+  width: 1200px;
+  margin: 0 auto;
+}
+.news .news-list {
+  margin-top: 28px;
+  margin-left: -8px;
+  margin-bottom: -21px;
+}
+.news .news-list li {
+  width: 294px;
+  margin-bottom: 21px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 8px;
+}
+.news .news-list li img {
+  display: inline-block;
+  width: 294px;
+  height: 200px;
+  margin-bottom: 12px;
+}
+.news .news-list li a {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  text-decoration: underline;
+  color: #848484;
+}
+.news .news-list li p {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #797979;
+}
+.news .news-list li time {
+  font-size: 13px;
+  line-height: 26px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #63c6ff;
+}
+.news .news-list + .pager {
+  margin-top: 21px;
+}
+.pager li {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.pager li a {
+  color: #848484;
+  text-decoration: underline;
+}
+.pager li + li {
+  margin-left: 17px;
+}
+.pager li.active {
+  width: 50px;
+  text-align: center;
+  background-color: #63c6ff;
+  color: #fff;
+  border-radius: 50%;
 }
 .hor-page-nav {
   width: 1200px;

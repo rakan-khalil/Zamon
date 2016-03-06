@@ -31,7 +31,7 @@
             position: relative;
             display: inline-block;
             vertical-align: top;
-            line-height: @icon-size;
+            line-height: @icon-size !important;
             margin-right: 24px;
             user-select: none;
             z-index: 2;
@@ -203,5 +203,9 @@
                 }
             }
         }
+    }
+
+    & + .news {
+        margin-top: 38px;
     }
 }
