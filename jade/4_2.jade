@@ -1,0 +1,52 @@
+include includes/head
+body
+    .content-wrapper
+        .head-wrapper
+            include includes/header
+            include includes/nav
+
+        - var pageName = 'Логистика'
+
+        - var brlist = ['Zamon Group', 'Услуги и решения', pageName]
+        include includes/breadcrumbs
+
+        .container.full-width
+            h1 Пресс-центр
+            - var hor_items = ['Все новости', 'Новости группы', 'Логистика', 'Инспекция', 'Контроль качества', 'Консалтинг', 'Программные решения', 'Специальные предложения']
+
+            .hor-page-nav
+                ul
+                    each item in hor_items
+                        if item === pageName
+                            li.active
+                                a(href="#")= item
+                        else
+                            li
+                                a(href="#")= item
+
+            .publication
+                .text
+                    h1= pageName
+                    img(src="photos/medium-preview-news.jpg").banner
+                    h2 Успешно реализована поставка хлопковой продукции по проекту «Cotton Uzbekistan»
+                    p Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+                    p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации.
+                    p Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
+                    p Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе.
+                    time 14 марта, 2015
+
+                - var news = ['services-logistic.jpg', 'services-inspection.jpg', 'services-quality-control.jpg', 'services-special-offers.jpg']
+                .news
+                    h2 Читайте также
+                    ul.news-list
+                        each item in news
+                            li
+                                img(src="images/#{item}")
+                                a(href="#") Короткий заголовок публикации, отражающий тему статьи
+                                p Небольшое превью публикации, состоящее из двух-трех предложений, в краткце расскаывающей о публикации.
+                                time 13 марта, 2015
+
+
+
+
+    include includes/footer

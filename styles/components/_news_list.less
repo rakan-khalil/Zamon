@@ -1,8 +1,8 @@
-.news {
-    @img-width: 294px;
-    @item-left-offset: 8px;
-    @item-bottom-offset: 21px;
+@img-width: 294px;
+@item-left-offset: 8px;
+@item-bottom-offset: 21px;
 
+.news {
     width: @content-width;
     margin: 0 auto;
 
@@ -54,5 +54,12 @@
         & + .pager {
             margin-top: 21px;
         }
+    }
+}
+
+// на странице публикации
+.publication {
+    .news {
+        width: @img-width * 2 + @item-left-offset;
     }
 }
