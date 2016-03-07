@@ -1173,6 +1173,45 @@ footer .footer-container .nav li a {
 .hor-page-nav ul li.active + li::before {
   display: none;
 }
+.round-image-list ul {
+  margin-bottom: -27px;
+  text-align: justify;
+}
+.round-image-list ul::after {
+  display: inline-block;
+  content: '';
+  height: 0;
+  width: 100%;
+}
+.round-image-list ul li {
+  width: 280px;
+  margin-bottom: 27px;
+  display: inline-block;
+  text-align: center;
+}
+.round-image-list ul li img {
+  display: block;
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 19px;
+}
+.round-image-list ul li a {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #848484;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+}
+.round-image-list ul li p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #797979;
+}
 .main header {
   width: 100%;
   background: #fff;
@@ -1548,6 +1587,31 @@ h3 {
 }
 .container .two-cols article .print a:hover {
   text-decoration: none;
+}
+.container .two-cols .round-image-list {
+  width: 900px;
+  float: right;
+}
+.container .two-cols .round-image-list h2 {
+  position: relative;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  padding-bottom: 23px;
+  width: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+.container .two-cols .round-image-list h2::after {
+  content: '';
+  width: 408px;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background-color: #63c6ff;
+}
+.container .two-cols .round-image-list h2 + * {
+  margin-top: 35px;
 }
 .container .two-cols.to-right aside {
   float: right;

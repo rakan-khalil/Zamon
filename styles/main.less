@@ -12,6 +12,7 @@
 @import 'components/_pager';
 @import 'components/_publication';
 @import 'components/_hor_nav_page';
+@import 'components/_round_image_list';
 
 @import 'pages/_main';
 
@@ -125,6 +126,7 @@ h3 {
     }
 
     .two-cols {
+        @article-width: 900px;
         @aside-width: 260px;
 
         width: @aside-width + (@content-width - @aside-width);
@@ -409,7 +411,7 @@ h3 {
         }
 
         article {
-            width: 900px;
+            width: @article-width;
             float: right;
             font-size: 13px;
             line-height: 22px;
@@ -468,6 +470,35 @@ h3 {
                     &:hover {
                         text-decoration: none;
                     }
+                }
+            }
+        }
+
+        .round-image-list {
+            width: @article-width;
+            float: right;
+
+            h2 {
+                position: relative;
+                font-size: 40px;
+                line-height: 40px;
+                font-family: @font-normal;
+                padding-bottom: 23px;
+                width: auto;
+                border-bottom: 1px solid #e5e5e5;
+
+                &::after {
+                    content: '';
+                    width: 408px;
+                    height: 1px;
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    background-color: @sea;
+                }
+
+                & + * {
+                    margin-top: 35px;
                 }
             }
         }

@@ -1,0 +1,44 @@
+include includes/head
+body
+    .content-wrapper
+        .head-wrapper
+            include includes/header
+            include includes/nav
+
+        - var pageName = 'Хлопок'
+
+        - var brlist = ['Zamon Group', 'Услуги и решения', pageName]
+        include includes/breadcrumbs
+
+        .container
+            h1 Услуги и решения
+            .two-cols
+                aside
+                    include includes/aside_menu
+                    include includes/aside_news
+                - var cottons = ['Хлопок из Узбекистна', 'Хлопок из Индии', 'Хлопок из США', 'Хлопок из Пакистана', 'Хлопок из Китая', 'Хлопок из Туркменистана', 'Хлопок из Турции', 'Хлопок из Бразилии', 'Хлопок из Нигерии']
+                .round-image-list
+                    h2= pageName
+                    ul
+                        each cotton in cottons
+                            li
+                                img(src="images/services-special-offers.jpg")
+                                a(href="#")= cotton
+                                p Небольшое описание из одного или нескольких предложений, вкратце рассказывающее о преимуществе данного предложения.
+
+
+        .slider-wrapper
+            .tiles.slider
+                h1 Смотрите также
+                span.prev.disabled
+                span.next
+                ul
+                    each point in [{img: 'services-logistic.jpg', name: 'Логистика'}, {img: 'services-inspection.jpg', name: 'Инспекция'}, {img: 'services-quality-control.jpg', name: 'Контроль качества'}, {img: 'services-consulting.jpg', name: 'Консалтинг'}, {img: 'services-software-solutions.jpg', name: 'Программные решения'}, {img: 'services-special-offers.jpg', name: 'Специальные предложения'}]
+                        li.tiles
+                            a(href="")
+                                .img: img(src="images/#{point.img}")
+                                strong #{point.name}
+                                span.name Название компании-подразделения
+                                span.link Перейти к разделу
+
+    include includes/footer
