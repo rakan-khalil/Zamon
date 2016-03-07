@@ -5,7 +5,7 @@ body
             include includes/header
             include includes/nav
 
-        - var pageName = 'Хлопок'
+        - var pageName = 'Хлопок из Республики Узбекистан'
 
         - var brlist = ['Zamon Group', 'Услуги и решения', pageName]
         include includes/breadcrumbs
@@ -16,10 +16,23 @@ body
                 aside
                     include includes/aside_menu
                     include includes/aside_news
-                - var cottons = ['Хлопок из Узбекистна', 'Хлопок из Индии', 'Хлопок из США', 'Хлопок из Пакистана', 'Хлопок из Китая', 'Хлопок из Туркменистана', 'Хлопок из Турции', 'Хлопок из Бразилии', 'Хлопок из Нигерии']
-                - var roundListHeadline = true
-                include includes/round_image_list
+                article
+                    -
+                        var staticPageData = {name: 'Инспекция', img: 'img-2.jpg'},
+                            but = true
+                    include includes/static_page_article
+                    .quote-wrapper
+                        .headline
+                            h3 Котировки сырьевых рынков в реальном времени
+                            small
+                             != 'Цены на сырьевые товары от <a href="#">Investing.com</a>'
+                        .quote-block
+                            img(src="photos/quote.jpg")
 
+        .special-offer
+            h1 Другие специальные предложения
+            - var cottons = ['Хлопок из Узбекистна', 'Хлопок из Индии', 'Хлопок из США', 'Хлопок из Пакистана']
+            include includes/round_image_list
 
         .slider-wrapper
             .tiles.slider

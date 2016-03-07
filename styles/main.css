@@ -1212,6 +1212,62 @@ footer .footer-container .nav li a {
   font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
   color: #797979;
 }
+.quote-wrapper {
+  position: relative;
+  font-size: 0;
+  padding: 12px 10px 12px 310px;
+  border: 1px solid #d1d1d1;
+  overflow: hidden;
+}
+.quote-wrapper .headline {
+  position: absolute;
+  width: 286px;
+  top: 12px;
+  left: 12px;
+}
+.quote-wrapper .headline h3 {
+  margin-top: 10px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  font-size: 28px !important;
+  line-height: 34px;
+  color: #63c6ff;
+  border-bottom: 1px solid #e5e5e5;
+}
+.quote-wrapper .headline small {
+  font-size: 13px;
+  line-height: 20px;
+  font-family: Arial, Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #525252;
+}
+.quote-wrapper .headline small a {
+  color: #848484;
+  text-decoration: underline;
+}
+.quote-wrapper .block-quote > * {
+  width: 100%;
+}
+.special-offer {
+  margin-top: 50px;
+  border-top: 1px solid #ededed;
+}
+.special-offer h1 {
+  width: 1200px;
+  margin: 35px auto 23px;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 9px;
+}
+.special-offer .round-image-list {
+  width: 1200px;
+  margin: 0 auto;
+}
+.special-offer .round-image-list li {
+  margin-bottom: 0;
+}
+.special-offer + .slider-wrapper {
+  margin-top: 55px;
+}
 .main header {
   width: 100%;
   background: #fff;
@@ -1572,6 +1628,9 @@ h3 {
 .container .two-cols article * + * {
   margin-top: 16px;
 }
+.container .two-cols article * + .quote-wrapper {
+  margin-top: 40px;
+}
 .container .two-cols article ul li {
   padding-left: 20px;
   background: url(../images/bullet.png) 0 9px no-repeat;
@@ -1587,6 +1646,18 @@ h3 {
 }
 .container .two-cols article .print a:hover {
   text-decoration: none;
+}
+.container .two-cols article .counting {
+  display: inline-block;
+  background-color: #63c6ff;
+  font-size: 22px;
+  line-height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  font-weight: 300;
+  font-family: 'Gotham Pro', Georgia, 'Times New Roman', Times, FreeSerif, serif;
+  color: #ffffff;
 }
 .container .two-cols .round-image-list {
   width: 900px;

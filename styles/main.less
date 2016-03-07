@@ -13,6 +13,8 @@
 @import 'components/_publication';
 @import 'components/_hor_nav_page';
 @import 'components/_round_image_list';
+@import 'components/_quote';
+@import 'components/_special_offer';
 
 @import 'pages/_main';
 
@@ -448,6 +450,10 @@ h3 {
                 margin-top: 16px;
             }
 
+            & * + .quote-wrapper {
+                margin-top: 40px;
+            }
+
             ul {
                 li {
                     padding-left: 20px;
@@ -471,6 +477,21 @@ h3 {
                         text-decoration: none;
                     }
                 }
+            }
+
+            .counting {
+                @line-height: 50px;
+
+                display: inline-block;
+                background-color: @sea;
+                font-size: 22px;
+                line-height: @line-height;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-right: 20px;
+                font-weight: 300;
+                font-family: @font-normal;
+                color: #ffffff;
             }
         }
 
