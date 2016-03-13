@@ -103,6 +103,7 @@
             position: relative;
             display: inline-block;
             margin: 0 2px;
+            overflow: hidden;
 
             // тень снизу
             &::before {
@@ -130,10 +131,21 @@
             }
 
             img {
-                top: 0;
-                left: 0;
                 position: absolute;
+                width: @img-width;
+                height: auto;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: all .4s ease-out;
                 z-index: -1;
+            }
+
+            &:hover {
+                img {
+                    width: @img-width + 30px;
+                    height: auto;
+                }
             }
 
             strong {
